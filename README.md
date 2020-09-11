@@ -12,6 +12,6 @@ I love AWS Amplify, however, I love using the CDK for managing my resources more
 
 Simple S3 Website Bucket and Bucket Deployment using AWS Cloud Development Kit. You can view the demo page [here](https://cdk-demo.kennethwinner.com/)
 
-## [Cloudfront SSR Demo](./cdkcloudfront-ssr)
+## [Cloudfront SSR Demo](./cloudfront-ssr)
 
 AWS Cloudfront to S3 Origin using the AWS CDK. Uses Lambda@Edge to modify the site metadata at request time for multi-domain use.
