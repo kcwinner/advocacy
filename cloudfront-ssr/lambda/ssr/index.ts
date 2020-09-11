@@ -4,7 +4,20 @@
 
 import * as path from 'path';
 
-let metaCache: any = {}
+let metaCache: any = {
+    ssrdemo: {
+        OG_TITLE: 'SSR DEMO ROOT',
+        OG_DESCRIPTION: 'First Example',
+        OG_IMAGE: 'https://unsplash.com/photos/zwsHjakE_iI',
+        OG_URL: 'https://ssrdemo.kennethwinner.com',
+    },
+    ssrdemo2: {
+        OG_TITLE: 'SSR DEMO Two',
+        OG_DESCRIPTION: 'Second example',
+        OG_IMAGE: 'https://unsplash.com/photos/6Kn_XRlhDAs',
+        OG_URL: 'https://ssrdemo2.kennethwinner.com',
+    }
+}
 
 export const handler = async (event: any = {}): Promise<any> => {
     const { config, request } = event.Records[0].cf;
@@ -102,22 +115,15 @@ async function processOriginResponse(event: any = {}): Promise<any> {
     return response;
 }
 
-async function getShowMetadata(appID: string, originalHost: string): Promise<any> {
+async function getShowMetadata(appID: string): Promise<any> {
     let metas: any = {};
 
-    if (showMetaCache[appID] && showMetaCache[appID] !== {}) {
-        console.log('Show Metadata is cached');
-        metas = showMetaCache[appID];
+    if (metaCache[appID] && metaCache[appID] !== {}) {
+        console.log('Metadata is cached');
+        metas = metaCache[appID];
     } else {
-        const metaDataResult = await appsync.query(appsync.getShowMetaTags, { appID });
-        metas = metaDataResult.data?.getShowMetaTags;
-        metas['OG_URL'] = `https://${originalHost}`;
-        showMetaCache[appID] = metas;
+        // Make an api call and cache the results
     }
 
-    return metas;
-}
-
-async function getShowManifest(appID: string, originalHost: string): Promise<any> {
-
+    return metaCache[appID];
 }
