@@ -19,12 +19,12 @@ export class CloudfrontSsrStack extends Stack {
     super(scope, id, props);
 
     const domainName = props.domainName;
-    const recordName = `*.${domainName}`
+    const recordName = `*.advocacy.${domainName}`
 
     const pwaBucket = new Bucket(this, 'cloudfront-ssr-demo-pwa-bucket', {
       websiteIndexDocument: 'index.html',
       websiteErrorDocument: 'index.html',
-      publicReadAccess: true,
+      publicReadAccess: true, // Doing this for ease of demo
     });
 
     const bucketOai = new OriginAccessIdentity(this, 'bucket-oai');
@@ -127,7 +127,7 @@ export class CloudfrontSsrStack extends Stack {
     // This copies our build directory to the bucket
     new BucketDeployment(this, 'deploy-website', {
       sources: [
-        Source.asset('../build')
+        Source.asset('./website/build')
       ],
       destinationBucket: pwaBucket
     });
