@@ -10,5 +10,27 @@
   },
   "keywords": [],
   "author": "Ken Winner",
-  "license": "MIT"
+  "license": "MIT",
+  "targets": {
+    "cdk-lambda": {
+      "context": "node",
+      "includeNodeModules": {
+        "aws-sdk": false
+      },
+      "sourceMap": false,
+      "minify": false,
+      "engines": {
+        "node": ">= 12"
+      }
+    }
+  },
+  "devDependencies": {
+    "@types/node": "^14.10.0",
+    "aws-sdk": "^2.750.0",
+    "ts-node": "^9.0.0",
+    "typescript": "^4.0.2"
+  },
+  "dependencies": {
+    "axios": "^0.20.0"
+  }
 }

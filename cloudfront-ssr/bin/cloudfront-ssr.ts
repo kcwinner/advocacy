@@ -17,7 +17,7 @@ const app = new cdk.App(
     }
 );
 
-new EdgeLambdaFunctionStack(app, `edge-lambe-function-stack-demo`, {
+new EdgeLambdaFunctionStack(app, `edge-lambda-function-stack-demo`, {
     description: 'Sets up the edge lambda for use with cloudfront',
     env: {
         account: ACCOUNT,
