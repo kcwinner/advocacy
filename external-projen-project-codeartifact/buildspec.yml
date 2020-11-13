@@ -1,0 +1,17 @@
+version: 0.2
+phases:
+  pre_build:
+    commands:
+      # Namespace should look something like @mycompany e.g. @voxiinc
+      - aws codeartifact login --tool npm --namespace ${YOUR_SCOPE} --repository ${YOUR_REPOSITORY} --domain ${YOUR_DOMAIN} --domain-owner ${YOUR_ACCOUNT_ID}
+  build:
+    commands:
+      - yarn install --frozen-lockfile
+      - yarn projen
+      - yarn run build
+  post_build:
+    commands:
+      - export NPM_TOKEN=`aws codeartifact get-authorization-token --domain ${YOUR_DOMAIN} --domain-owner ${YOUR_ACCOUNT_ID} --query authorizationToken --output text`
+      - export NPM_DIST_TAG="latest"
+      - export NPM_REGISTRY=${YOUR_DOMAIN_REGISTRY}
+      - npx -p jsii-release jsii-release-npm
