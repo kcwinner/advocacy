@@ -7,7 +7,7 @@ const app = new App();
 
 new CubeJsStack(app, 'cubejs-serverless-demo', {
   terminationProtection: true,
-  description: 'Voxi Cube JS Test',
+  description: 'Cube.js Serverless Demo',
   env: {
     region: REGION,
   },
