@@ -1,8 +1,38 @@
 # External Project Project to AWS CodeArtifact
 
+Accompanying blogpost can be found [here](https://kennethwinner.com/2020/11/14/external-projen-project-codeartifact/)!
+
 ## Projen Composite Project
 
 This example is created from a [projen](https://github.com/projen/projen) composite project including a `jsii` project for the custom project type and an `awscdk-app-ts` project for the pipeline/codeartifact creation.
+
+### Setup
+
+First use projen to install all dependencies and setup the project:
+```bash
+npx projen
+```
+
+### Deploy AWS Resources
+
+```bash
+cd pipeline
+yarn deploy
+```
+
+### Test The Demo Project
+
+```bash
+cd demo-project
+yarn build
+```
+
+### Publish The Package
+
+```bash
+cd demo-project
+yarn bump
+```
 
 ## Buildspec Example
 ```yaml
