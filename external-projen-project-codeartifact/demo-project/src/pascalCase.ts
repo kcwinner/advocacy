@@ -1,3 +1,7 @@
+/*
+ * Took relevant parts from https://github.com/sindresorhus/camelcase
+*/
+
 export function pascalCase(input: string) {
   if (!(typeof input === 'string' || Array.isArray(input))) {
     throw new TypeError('Expected the input to be `string | string[]`');

@@ -8,9 +8,11 @@ phases:
     commands:
       - yarn install --frozen-lockfile
       - yarn projen
+      - cd demo-project
       - yarn run build
   post_build:
     commands:
+      - cd demo-project
       - export NPM_TOKEN=`aws codeartifact get-authorization-token --domain ${YOUR_DOMAIN} --domain-owner ${YOUR_ACCOUNT_ID} --query authorizationToken --output text`
       - export NPM_DIST_TAG="latest"
       - export NPM_REGISTRY=${YOUR_DOMAIN_REGISTRY}

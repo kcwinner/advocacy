@@ -27,14 +27,16 @@ export class AwsCdkAppSyncApp extends AwsCdkTypeScriptApp {
       // Don't do this at home - it blocks the cdk version from being set via .projenrc
       // but there is a bug in projen atm - issue #305
       cdkVersion: '1.65.0',
-      cdkVersionPinning: true
+      cdkVersionPinning: true,
     });
 
     const transformerVersion = options.cdkVersionPinning
       ? Semver.pinned(options.transformerVersion)
       : Semver.caret(options.transformerVersion);
 
-    this.addDependencies({ 'cdk-appsync-transformer': transformerVersion });
+    this.addDeps(...[
+      `cdk-appsync-transformer@${transformerVersion.spec}`,
+    ]);
 
     this.addCdkDependency(...[
       '@aws-cdk/core',

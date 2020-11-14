@@ -4,18 +4,18 @@
 
 Name|Description
 ----|-----------
-[AwsCdkAppSyncApp](#external-projen-project-codeartifact-awscdkappsyncapp)|AWS CDK AppSync Transformer App in TypeScript.
+[AwsCdkAppSyncApp](#demo-external-projen-project-codeartifact-awscdkappsyncapp)|AWS CDK AppSync Transformer App in TypeScript.
 
 
 **Structs**
 
 Name|Description
 ----|-----------
-[AwsCdkAppSyncAppOptions](#external-projen-project-codeartifact-awscdkappsyncappoptions)|*No description*
+[AwsCdkAppSyncAppOptions](#demo-external-projen-project-codeartifact-awscdkappsyncappoptions)|*No description*
 
 
 
-## class AwsCdkAppSyncApp  <a id="external-projen-project-codeartifact-awscdkappsyncapp"></a>
+## class AwsCdkAppSyncApp  <a id="demo-external-projen-project-codeartifact-awscdkappsyncapp"></a>
 
 AWS CDK AppSync Transformer App in TypeScript.
 
@@ -30,7 +30,7 @@ __Extends__: [AwsCdkTypeScriptApp](#projen-awscdktypescriptapp)
 new AwsCdkAppSyncApp(options: AwsCdkAppSyncAppOptions)
 ```
 
-* **options** (<code>[AwsCdkAppSyncAppOptions](#external-projen-project-codeartifact-awscdkappsyncappoptions)</code>)  *No description*
+* **options** (<code>[AwsCdkAppSyncAppOptions](#demo-external-projen-project-codeartifact-awscdkappsyncappoptions)</code>)  *No description*
   * **allowLibraryDependencies** (<code>boolean</code>)  Allow the project to include `peerDependencies` and `bundledDependencies`. __*Default*__: true
   * **antitamper** (<code>boolean</code>)  Checks that after build there are no modified files on git. __*Default*__: true
   * **autoDetectBin** (<code>boolean</code>)  Automatically add all executables under the `bin` directory to your `package.json` file under the `bin` section. __*Default*__: true
@@ -121,7 +121,7 @@ new AwsCdkAppSyncApp(options: AwsCdkAppSyncAppOptions)
 
 
 
-## struct AwsCdkAppSyncAppOptions  <a id="external-projen-project-codeartifact-awscdkappsyncappoptions"></a>
+## struct AwsCdkAppSyncAppOptions  <a id="demo-external-projen-project-codeartifact-awscdkappsyncappoptions"></a>
 
 
 

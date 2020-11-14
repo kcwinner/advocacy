@@ -1,7 +1,10 @@
 # External Project Project to AWS CodeArtifact
 
+## Projen Composite Project
 
-## Buildspec
+This example is created from a [projen](https://github.com/projen/projen) composite project including a `jsii` project for the custom project type and an `awscdk-app-ts` project for the pipeline/codeartifact creation.
+
+## Buildspec Example
 ```yaml
 version: 0.2
 phases:
@@ -14,9 +17,11 @@ phases:
       # We don't have access to git here without doing extra stuff so skip the antitamper for the example
       - yarn install --frozen-lockfile
       - yarn projen
+      - cd demo-project
       - yarn run build
   post_build:
     commands:
+      - cd demo-project
       - export NPM_TOKEN=`aws codeartifact get-authorization-token --domain my-artifact-domain --domain-owner ${ACCOUNT_ID} --query authorizationToken --output text`
       - export NPM_DIST_TAG="latest"
       - export NPM_REGISTRY="my-artifact-domain-${ACCOUNT_ID}.d.codeartifact.us-east-2.amazonaws.com/npm/my-artifact-repository"
