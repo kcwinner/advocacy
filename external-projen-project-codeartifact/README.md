@@ -31,7 +31,9 @@ yarn build
 
 ```bash
 cd demo-project
-yarn bump
+yarn bump # This will give an error right now
+cd ..
+npx projen
 ```
 
 ## Buildspec Example

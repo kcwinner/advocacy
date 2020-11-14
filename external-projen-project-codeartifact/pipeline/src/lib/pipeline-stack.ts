@@ -86,14 +86,13 @@ export class PipelineStack extends Stack {
           },
           build: {
             commands: [
-              'yarn projen',
+              'npx projen',
               'cd demo-project',
               'yarn build'
             ]
           },
           post_build: {
             commands: [
-              'cd demo-project',
               `export NPM_TOKEN=\`aws codeartifact get-authorization-token --domain ${this.artifactDomain.attrName} --domain-owner ${this.artifactDomain.attrOwner} --query authorizationToken --output text\``,
               'export NPM_DIST_TAG="latest"',
               `export NPM_REGISTRY=${npmRegistryUrl}`,
