@@ -13,5 +13,5 @@ phases:
     commands:
       - export NPM_TOKEN=`aws codeartifact get-authorization-token --domain ${YOUR_DOMAIN} --domain-owner ${YOUR_ACCOUNT_ID} --query authorizationToken --output text`
       - export NPM_DIST_TAG="latest"
-      - export NPM_REGISTRY=${YOUR_DOMAIN_REGISTRY}
+      - export NPM_REGISTRY="${YOUR_DOMAIN_REGISTRY}"
       - npx -p jsii-release jsii-release-npm

@@ -20,11 +20,11 @@ export class PipelineStack extends Stack {
     super(scope, id, props);
 
     this.artifactDomain = new CfnDomain(this, 'demo-artifact-domain', {
-      domainName: 'demo-artifact-domain'
+      domainName: 'demo-domain'
     })
 
     this.artifactRepository = new CfnRepository(this, 'demo-artifact-repository', {
-      repositoryName: 'demo-artifact-repository',
+      repositoryName: 'demo-repository',
     })
 
     this.artifactRepository.addDependsOn(this.artifactDomain);
@@ -70,12 +70,11 @@ export class PipelineStack extends Stack {
       actions: [source],
     });
 
-    // my-artifact-domain-${ACCOUNT_ID}.d.codeartifact.us-east-2.amazonaws.com/npm/my-artifact-repository
-    const npmRegistryUrl = `${this.artifactDomain.attrName}-${this.artifactDomain.attrOwner}.d.codeartifact.${this.region}.amazonaws.com/npm/${this.artifactRepository}`;
+    // my-artifact-domain-${ACCOUNT_ID}.d.codeartifact.${REGION}.amazonaws.com/npm/my-artifact-repository
+    const npmRegistryUrl = `${this.artifactDomain.attrName}-${this.artifactDomain.attrOwner}.d.codeartifact.${this.region}.amazonaws.com/npm/${this.artifactRepository.attrName}`;
 
     const publishStep = new PipelineProject(this, 'demo-project-publish-package', {
       projectName: 'demo-project-publish-package',
-      // buildSpec: BuildSpec.fromSourceFilename('./buildspec.yml'),
       buildSpec: BuildSpec.fromObject({
         version: '0.2',
         phases: {

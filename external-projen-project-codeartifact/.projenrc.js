@@ -15,9 +15,9 @@ const project = new CompositeProject({
       project: new JsiiProject({
         authorName: 'Ken Winner',
         authorAddress: 'kcswinner@gmail.com',
-        name: "demo-project",
+        name: "@demo/demo-project",
         repository: "https://github.com/kcwinner/advocacy.git",
-        minNodeVersion: '10.12.0',
+        minNodeVersion: '10.17.0',
         devDeps: [
           '@types/fs-extra@^8', // This will break if it's on 9
           'fs-extra'
@@ -52,5 +52,12 @@ const project = new CompositeProject({
     },
   ]
 });
+
+// We have to dig deep for the jsii project type
+// We need to add the publish config
+const jsiiProject = project.projects['demo-project'].options.project;
+jsiiProject.addFields({
+  'publishConfig': { "registry": "https://demo-domain-<ACCOUNT_ID>.d.codeartifact.<REGION>.amazonaws.com/npm/demo-repository/" }
+})
 
 project.synth();

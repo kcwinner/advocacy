@@ -47,13 +47,11 @@ phases:
   build:
     commands:
       # We don't have access to git here without doing extra stuff so skip the antitamper for the example
-      - yarn install --frozen-lockfile
-      - yarn projen
+      - npx projen
       - cd demo-project
       - yarn run build
   post_build:
     commands:
-      - cd demo-project
       - export NPM_TOKEN=`aws codeartifact get-authorization-token --domain my-artifact-domain --domain-owner ${ACCOUNT_ID} --query authorizationToken --output text`
       - export NPM_DIST_TAG="latest"
       - export NPM_REGISTRY="my-artifact-domain-${ACCOUNT_ID}.d.codeartifact.us-east-2.amazonaws.com/npm/my-artifact-repository"
