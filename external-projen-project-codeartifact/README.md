@@ -1,6 +1,6 @@
 # External Project Project to AWS CodeArtifact
 
-Accompanying blogpost can be found [here](https://kennethwinner.com/2020/11/14/external-projen-project-codeartifact/)!
+Accompanying blogpost can be found [here](https://kennethwinner.com/2020/11/16/custom-projen-project-codeartifact/)!
 
 ## Projen Composite Project
 
