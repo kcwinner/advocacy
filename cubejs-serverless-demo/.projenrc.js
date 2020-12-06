@@ -48,9 +48,11 @@ const project = new AwsCdkTypeScriptApp({
 
 project.addScripts({
   'build:cube': 'cd cubejs-lambda && npm install && cd ..',
+  'create-user': 'node bin/createUser.js',
   dev: './cubejs-lambda/node_modules/.bin/cubejs-dev-server',
+  'generate-token': 'node bin/generateToken.js',
   'migrate:up': 'knex migrate:up --env demo',
-  'seed': 'knex seed:run --env demo'
+  seed: 'knex seed:run --env demo'
 })
 
 project.synth();
