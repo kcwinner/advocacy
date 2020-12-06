@@ -1,10 +1,12 @@
 # Cube.js Serverless Demo
 
-*Disclaimer* 
-
 * All commands assume you have proper AWS IAM credentials
-* This uses an EXPERIMENTAL [DynamoDB cache/queue driver](https://github.com/cube-js/cube.js/pull/1496) for cubejs. It is a work in progress
+* This uses an *EXPERIMENTAL* [DynamoDB cache/queue driver](https://github.com/cube-js/cube.js/pull/1496) for cubejs. It is a work in progress
+  * You can turn this off by swapping the environment variables for the Lambda functions
+  * There will be bugs :)
+* Uses the [aws-cdk](https://github.com/aws/aws-cdk) for deployments
 * Uses my [cdk-appsync-transformer](https://github.com/kcwinner/cdk-appsync-transformer) construct to generate the AppSync schema and tables
+* Uses [projen](https://github.com/projen/projen) for project management
 
 ## Setup
 
@@ -43,7 +45,7 @@ I used the data from the [Open Source Dashboard Guide](https://cube.dev/blog/cub
 
 ### Migrate And Seed
 
-You can grab your database secret adn cluster arns from the outputs of deploy.
+You can grab your database secret and cluster ARNs from the outputs of deploy.
 
 ```bash
 export DB_SECRET_ARN="<YOUR_SECRET_ARN_HERE>"
