@@ -1,0 +1,42 @@
+[
+    {
+        "created_at": "2016-12-25 06:50:22",
+        "name": "Clothing"
+    },
+    {
+        "created_at": "2016-11-24 21:42:09",
+        "name": "Phones"
+    },
+    {
+        "created_at": "2016-10-31 00:43:56",
+        "name": "Computers"
+    },
+    {
+        "created_at": "2016-10-24 17:02:57",
+        "name": "Electronics"
+    },
+    {
+        "created_at": "2016-12-14 02:50:20",
+        "name": "Jewellery"
+    },
+    {
+        "created_at": "2017-01-21 21:31:25",
+        "name": "Watches"
+    },
+    {
+        "created_at": "2017-02-03 22:21:31",
+        "name": "Beauty"
+    },
+    {
+        "created_at": "2016-11-28 16:16:50",
+        "name": "Toys"
+    },
+    {
+        "created_at": "2017-02-21 18:44:01",
+        "name": "Home"
+    },
+    {
+        "created_at": "2017-01-03 16:31:19",
+        "name": "Sports"
+    }
+]

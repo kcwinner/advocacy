@@ -1,0 +1,702 @@
+[
+    {
+        "name": "Tasty Rubber Gloves",
+        "description": "Tools Incredible Wooden Pizza",
+        "created_at": "2021-07-05 00:00:00",
+        "supplier_id": 99,
+        "product_category_id": 9
+    },
+    {
+        "name": "Fantastic Frozen Shoes",
+        "description": "Health Fantastic Wooden Chicken",
+        "created_at": "2020-12-26 00:00:00",
+        "supplier_id": 21,
+        "product_category_id": 3
+    },
+    {
+        "name": "Unbranded Granite Bacon",
+        "description": "Movies Refined Plastic Keyboard",
+        "created_at": "2019-09-24 00:00:00",
+        "supplier_id": 36,
+        "product_category_id": 8
+    },
+    {
+        "name": "Ergonomic Metal Ball",
+        "description": "Jewelery Sleek Frozen Mouse",
+        "created_at": "2019-01-22 00:00:00",
+        "supplier_id": 37,
+        "product_category_id": 1
+    },
+    {
+        "name": "Small Steel Chair",
+        "description": "Industrial Generic Steel Car",
+        "created_at": "2021-04-01 00:00:00",
+        "supplier_id": 9,
+        "product_category_id": 6
+    },
+    {
+        "name": "Tasty Fresh Bike",
+        "description": "Clothing Handcrafted Steel Cheese",
+        "created_at": "2019-01-02 00:00:00",
+        "supplier_id": 19,
+        "product_category_id": 3
+    },
+    {
+        "name": "Small Plastic Tuna",
+        "description": "Computers Handcrafted Steel Gloves",
+        "created_at": "2021-01-12 00:00:00",
+        "supplier_id": 45,
+        "product_category_id": 5
+    },
+    {
+        "name": "Awesome Steel Bike",
+        "description": "Movies Generic Soft Tuna",
+        "created_at": "2019-05-03 00:00:00",
+        "supplier_id": 75,
+        "product_category_id": 7
+    },
+    {
+        "name": "Awesome Granite Pizza",
+        "description": "Tools Small Soft Tuna",
+        "created_at": "2019-04-21 00:00:00",
+        "supplier_id": 30,
+        "product_category_id": 4
+    },
+    {
+        "name": "Rustic Granite Pizza",
+        "description": "Tools Generic Fresh Chips",
+        "created_at": "2020-06-18 00:00:00",
+        "supplier_id": 82,
+        "product_category_id": 3
+    },
+    {
+        "name": "Generic Metal Pants",
+        "description": "Books Refined Granite Bike",
+        "created_at": "2020-10-24 00:00:00",
+        "supplier_id": 72,
+        "product_category_id": 5
+    },
+    {
+        "name": "Small Fresh Bike",
+        "description": "Outdoors Fantastic Frozen Ball",
+        "created_at": "2020-01-24 00:00:00",
+        "supplier_id": 11,
+        "product_category_id": 2
+    },
+    {
+        "name": "Handcrafted Fresh Fish",
+        "description": "Tools Licensed Concrete Bike",
+        "created_at": "2020-02-09 00:00:00",
+        "supplier_id": 93,
+        "product_category_id": 9
+    },
+    {
+        "name": "Gorgeous Steel Salad",
+        "description": "Outdoors Refined Plastic Soap",
+        "created_at": "2020-03-19 00:00:00",
+        "supplier_id": 68,
+        "product_category_id": 7
+    },
+    {
+        "name": "Practical Steel Hat",
+        "description": "Kids Tasty Plastic Chicken",
+        "created_at": "2021-12-22 00:00:00",
+        "supplier_id": 30,
+        "product_category_id": 5
+    },
+    {
+        "name": "Gorgeous Cotton Shoes",
+        "description": "Games Handmade Granite Chair",
+        "created_at": "2020-02-10 00:00:00",
+        "supplier_id": 54,
+        "product_category_id": 2
+    },
+    {
+        "name": "Generic Wooden Chair",
+        "description": "Outdoors Licensed Steel Chips",
+        "created_at": "2021-07-04 00:00:00",
+        "supplier_id": 5,
+        "product_category_id": 6
+    },
+    {
+        "name": "Fantastic Plastic Gloves",
+        "description": "Garden Intelligent Frozen Computer",
+        "created_at": "2019-12-08 00:00:00",
+        "supplier_id": 9,
+        "product_category_id": 1
+    },
+    {
+        "name": "Unbranded Frozen Sausages",
+        "description": "Outdoors Generic Frozen Chips",
+        "created_at": "2020-12-09 00:00:00",
+        "supplier_id": 67,
+        "product_category_id": 4
+    },
+    {
+        "name": "Ergonomic Granite Hat",
+        "description": "Books Handmade Metal Chips",
+        "created_at": "2020-08-11 00:00:00",
+        "supplier_id": 46,
+        "product_category_id": 4
+    },
+    {
+        "name": "Refined Plastic Keyboard",
+        "description": "Movies Handmade Steel Ball",
+        "created_at": "2019-09-01 00:00:00",
+        "supplier_id": 9,
+        "product_category_id": 5
+    },
+    {
+        "name": "Gorgeous Frozen Tuna",
+        "description": "Tools Sleek Steel Shoes",
+        "created_at": "2019-10-10 00:00:00",
+        "supplier_id": 79,
+        "product_category_id": 3
+    },
+    {
+        "name": "Ergonomic Cotton Shoes",
+        "description": "Games Incredible Metal Chips",
+        "created_at": "2020-08-27 00:00:00",
+        "supplier_id": 5,
+        "product_category_id": 5
+    },
+    {
+        "name": "Unbranded Frozen Ball",
+        "description": "Toys Small Rubber Pizza",
+        "created_at": "2020-01-01 00:00:00",
+        "supplier_id": 94,
+        "product_category_id": 2
+    },
+    {
+        "name": "Intelligent Fresh Tuna",
+        "description": "Beauty Unbranded Rubber Shirt",
+        "created_at": "2020-08-01 00:00:00",
+        "supplier_id": 89,
+        "product_category_id": 9
+    },
+    {
+        "name": "Tasty Metal Bacon",
+        "description": "Garden Small Cotton Salad",
+        "created_at": "2021-08-29 00:00:00",
+        "supplier_id": 46,
+        "product_category_id": 2
+    },
+    {
+        "name": "Practical Frozen Bike",
+        "description": "Movies Ergonomic Plastic Salad",
+        "created_at": "2020-08-26 00:00:00",
+        "supplier_id": 98,
+        "product_category_id": 10
+    },
+    {
+        "name": "Handmade Cotton Shoes",
+        "description": "Jewelery Ergonomic Plastic Shirt",
+        "created_at": "2020-05-14 00:00:00",
+        "supplier_id": 27,
+        "product_category_id": 5
+    },
+    {
+        "name": "Refined Frozen Ball",
+        "description": "Beauty Sleek Concrete Pants",
+        "created_at": "2019-11-08 00:00:00",
+        "supplier_id": 84,
+        "product_category_id": 9
+    },
+    {
+        "name": "Handmade Frozen Ball",
+        "description": "Books Handmade Soft Gloves",
+        "created_at": "2019-04-14 00:00:00",
+        "supplier_id": 2,
+        "product_category_id": 6
+    },
+    {
+        "name": "Licensed Frozen Tuna",
+        "description": "Toys Handcrafted Granite Pants",
+        "created_at": "2019-04-02 00:00:00",
+        "supplier_id": 13,
+        "product_category_id": 10
+    },
+    {
+        "name": "Fantastic Concrete Gloves",
+        "description": "Garden Licensed Cotton Chips",
+        "created_at": "2019-03-14 00:00:00",
+        "supplier_id": 51,
+        "product_category_id": 3
+    },
+    {
+        "name": "Ergonomic Cotton Soap",
+        "description": "Outdoors Fantastic Rubber Bacon",
+        "created_at": "2021-06-21 00:00:00",
+        "supplier_id": 72,
+        "product_category_id": 9
+    },
+    {
+        "name": "Refined Soft Table",
+        "description": "Grocery Sleek Fresh Towels",
+        "created_at": "2020-01-14 00:00:00",
+        "supplier_id": 2,
+        "product_category_id": 4
+    },
+    {
+        "name": "Sleek Granite Bike",
+        "description": "Toys Generic Fresh Towels",
+        "created_at": "2020-05-13 00:00:00",
+        "supplier_id": 91,
+        "product_category_id": 8
+    },
+    {
+        "name": "Ergonomic Soft Shirt",
+        "description": "Garden Practical Cotton Chair",
+        "created_at": "2019-09-02 00:00:00",
+        "supplier_id": 19,
+        "product_category_id": 2
+    },
+    {
+        "name": "Handmade Plastic Pants",
+        "description": "Automotive Fantastic Metal Chips",
+        "created_at": "2019-03-02 00:00:00",
+        "supplier_id": 95,
+        "product_category_id": 8
+    },
+    {
+        "name": "Ergonomic Fresh Tuna",
+        "description": "Home Sleek Granite Pants",
+        "created_at": "2020-08-21 00:00:00",
+        "supplier_id": 19,
+        "product_category_id": 2
+    },
+    {
+        "name": "Ergonomic Metal Car",
+        "description": "Music Generic Wooden Computer",
+        "created_at": "2019-01-29 00:00:00",
+        "supplier_id": 78,
+        "product_category_id": 10
+    },
+    {
+        "name": "Rustic Cotton Chicken",
+        "description": "Music Gorgeous Frozen Tuna",
+        "created_at": "2019-06-17 00:00:00",
+        "supplier_id": 27,
+        "product_category_id": 3
+    },
+    {
+        "name": "Unbranded Fresh Bacon",
+        "description": "Garden Refined Concrete Chair",
+        "created_at": "2021-05-13 00:00:00",
+        "supplier_id": 46,
+        "product_category_id": 1
+    },
+    {
+        "name": "Rustic Fresh Chicken",
+        "description": "Automotive Rustic Granite Chips",
+        "created_at": "2019-03-23 00:00:00",
+        "supplier_id": 46,
+        "product_category_id": 8
+    },
+    {
+        "name": "Small Metal Towels",
+        "description": "Outdoors Unbranded Cotton Towels",
+        "created_at": "2019-10-25 00:00:00",
+        "supplier_id": 89,
+        "product_category_id": 10
+    },
+    {
+        "name": "Awesome Plastic Hat",
+        "description": "Books Rustic Soft Bike",
+        "created_at": "2020-12-12 00:00:00",
+        "supplier_id": 22,
+        "product_category_id": 2
+    },
+    {
+        "name": "Tasty Cotton Sausages",
+        "description": "Games Incredible Soft Pizza",
+        "created_at": "2020-04-27 00:00:00",
+        "supplier_id": 89,
+        "product_category_id": 9
+    },
+    {
+        "name": "Incredible Rubber Soap",
+        "description": "Baby Practical Plastic Tuna",
+        "created_at": "2020-10-11 00:00:00",
+        "supplier_id": 33,
+        "product_category_id": 7
+    },
+    {
+        "name": "Ergonomic Plastic Computer",
+        "description": "Tools Handmade Concrete Chips",
+        "created_at": "2021-02-04 00:00:00",
+        "supplier_id": 84,
+        "product_category_id": 4
+    },
+    {
+        "name": "Practical Cotton Gloves",
+        "description": "Industrial Incredible Fresh Salad",
+        "created_at": "2021-09-06 00:00:00",
+        "supplier_id": 75,
+        "product_category_id": 6
+    },
+    {
+        "name": "Intelligent Wooden Salad",
+        "description": "Tools Small Soft Towels",
+        "created_at": "2021-05-13 00:00:00",
+        "supplier_id": 68,
+        "product_category_id": 10
+    },
+    {
+        "name": "Refined Plastic Bacon",
+        "description": "Automotive Handmade Concrete Chicken",
+        "created_at": "2020-07-11 00:00:00",
+        "supplier_id": 72,
+        "product_category_id": 4
+    },
+    {
+        "name": "Refined Granite Computer",
+        "description": "Tools Awesome Rubber Bacon",
+        "created_at": "2021-07-05 00:00:00",
+        "supplier_id": 60,
+        "product_category_id": 10
+    },
+    {
+        "name": "Sleek Cotton Gloves",
+        "description": "Games Incredible Wooden Fish",
+        "created_at": "2020-01-04 00:00:00",
+        "supplier_id": 61,
+        "product_category_id": 1
+    },
+    {
+        "name": "Sleek Rubber Car",
+        "description": "Beauty Refined Rubber Car",
+        "created_at": "2020-01-21 00:00:00",
+        "supplier_id": 86,
+        "product_category_id": 2
+    },
+    {
+        "name": "Ergonomic Concrete Keyboard",
+        "description": "Games Practical Frozen Tuna",
+        "created_at": "2020-08-02 00:00:00",
+        "supplier_id": 44,
+        "product_category_id": 3
+    },
+    {
+        "name": "Intelligent Granite Bacon",
+        "description": "Sports Sleek Soft Pizza",
+        "created_at": "2020-12-14 00:00:00",
+        "supplier_id": 44,
+        "product_category_id": 3
+    },
+    {
+        "name": "Unbranded Frozen Pants",
+        "description": "Computers Generic Granite Bacon",
+        "created_at": "2020-02-10 00:00:00",
+        "supplier_id": 25,
+        "product_category_id": 7
+    },
+    {
+        "name": "Small Metal Tuna",
+        "description": "Sports Awesome Soft Mouse",
+        "created_at": "2021-11-08 00:00:00",
+        "supplier_id": 75,
+        "product_category_id": 10
+    },
+    {
+        "name": "Licensed Granite Chair",
+        "description": "Shoes Intelligent Plastic Ball",
+        "created_at": "2019-10-30 00:00:00",
+        "supplier_id": 66,
+        "product_category_id": 1
+    },
+    {
+        "name": "Intelligent Metal Sausages",
+        "description": "Health Practical Fresh Soap",
+        "created_at": "2021-06-27 00:00:00",
+        "supplier_id": 17,
+        "product_category_id": 3
+    },
+    {
+        "name": "Licensed Cotton Hat",
+        "description": "Health Ergonomic Frozen Chair",
+        "created_at": "2021-12-28 00:00:00",
+        "supplier_id": 95,
+        "product_category_id": 7
+    },
+    {
+        "name": "Fantastic Soft Salad",
+        "description": "Books Incredible Metal Salad",
+        "created_at": "2021-09-07 00:00:00",
+        "supplier_id": 3,
+        "product_category_id": 8
+    },
+    {
+        "name": "Fantastic Wooden Bacon",
+        "description": "Sports Generic Metal Pizza",
+        "created_at": "2019-12-31 00:00:00",
+        "supplier_id": 47,
+        "product_category_id": 10
+    },
+    {
+        "name": "Intelligent Soft Chips",
+        "description": "Games Sleek Soft Car",
+        "created_at": "2020-07-22 00:00:00",
+        "supplier_id": 68,
+        "product_category_id": 6
+    },
+    {
+        "name": "Practical Cotton Fish",
+        "description": "Outdoors Licensed Rubber Shoes",
+        "created_at": "2020-11-18 00:00:00",
+        "supplier_id": 15,
+        "product_category_id": 2
+    },
+    {
+        "name": "Generic Cotton Computer",
+        "description": "Computers Ergonomic Soft Hat",
+        "created_at": "2021-02-06 00:00:00",
+        "supplier_id": 48,
+        "product_category_id": 3
+    },
+    {
+        "name": "Generic Plastic Soap",
+        "description": "Outdoors Refined Soft Pizza",
+        "created_at": "2020-10-17 00:00:00",
+        "supplier_id": 11,
+        "product_category_id": 5
+    },
+    {
+        "name": "Intelligent Soft Mouse",
+        "description": "Jewelery Fantastic Plastic Pants",
+        "created_at": "2019-09-17 00:00:00",
+        "supplier_id": 98,
+        "product_category_id": 10
+    },
+    {
+        "name": "Awesome Steel Fish",
+        "description": "Automotive Refined Plastic Bike",
+        "created_at": "2019-02-08 00:00:00",
+        "supplier_id": 85,
+        "product_category_id": 1
+    },
+    {
+        "name": "Refined Cotton Sausages",
+        "description": "Jewelery Rustic Granite Shoes",
+        "created_at": "2021-12-22 00:00:00",
+        "supplier_id": 44,
+        "product_category_id": 7
+    },
+    {
+        "name": "Awesome Fresh Computer",
+        "description": "Clothing Refined Steel Pizza",
+        "created_at": "2020-11-03 00:00:00",
+        "supplier_id": 57,
+        "product_category_id": 1
+    },
+    {
+        "name": "Fantastic Concrete Shoes",
+        "description": "Tools Licensed Granite Chair",
+        "created_at": "2019-07-12 00:00:00",
+        "supplier_id": 31,
+        "product_category_id": 3
+    },
+    {
+        "name": "Generic Rubber Car",
+        "description": "Baby Practical Granite Table",
+        "created_at": "2020-03-12 00:00:00",
+        "supplier_id": 80,
+        "product_category_id": 9
+    },
+    {
+        "name": "Licensed Concrete Pizza",
+        "description": "Sports Handcrafted Plastic Chicken",
+        "created_at": "2019-10-15 00:00:00",
+        "supplier_id": 43,
+        "product_category_id": 7
+    },
+    {
+        "name": "Tasty Rubber Table",
+        "description": "Electronics Sleek Cotton Table",
+        "created_at": "2019-09-29 00:00:00",
+        "supplier_id": 65,
+        "product_category_id": 8
+    },
+    {
+        "name": "Refined Granite Computer",
+        "description": "Movies Intelligent Plastic Salad",
+        "created_at": "2021-01-18 00:00:00",
+        "supplier_id": 31,
+        "product_category_id": 9
+    },
+    {
+        "name": "Sleek Granite Hat",
+        "description": "Electronics Small Metal Tuna",
+        "created_at": "2019-02-07 00:00:00",
+        "supplier_id": 22,
+        "product_category_id": 1
+    },
+    {
+        "name": "Generic Metal Shirt",
+        "description": "Movies Gorgeous Rubber Bacon",
+        "created_at": "2020-07-04 00:00:00",
+        "supplier_id": 24,
+        "product_category_id": 5
+    },
+    {
+        "name": "Awesome Steel Tuna",
+        "description": "Beauty Ergonomic Granite Towels",
+        "created_at": "2021-11-28 00:00:00",
+        "supplier_id": 26,
+        "product_category_id": 6
+    },
+    {
+        "name": "Incredible Frozen Hat",
+        "description": "Shoes Intelligent Concrete Fish",
+        "created_at": "2020-04-29 00:00:00",
+        "supplier_id": 77,
+        "product_category_id": 1
+    },
+    {
+        "name": "Awesome Rubber Fish",
+        "description": "Health Unbranded Soft Shirt",
+        "created_at": "2021-08-05 00:00:00",
+        "supplier_id": 62,
+        "product_category_id": 1
+    },
+    {
+        "name": "Rustic Fresh Pizza",
+        "description": "Baby Ergonomic Cotton Soap",
+        "created_at": "2019-08-12 00:00:00",
+        "supplier_id": 95,
+        "product_category_id": 7
+    },
+    {
+        "name": "Handmade Fresh Car",
+        "description": "Beauty Rustic Steel Tuna",
+        "created_at": "2020-02-28 00:00:00",
+        "supplier_id": 14,
+        "product_category_id": 1
+    },
+    {
+        "name": "Ergonomic Steel Mouse",
+        "description": "Industrial Ergonomic Soft Gloves",
+        "created_at": "2020-08-21 00:00:00",
+        "supplier_id": 45,
+        "product_category_id": 4
+    },
+    {
+        "name": "Intelligent Soft Hat",
+        "description": "Shoes Rustic Fresh Cheese",
+        "created_at": "2020-10-20 00:00:00",
+        "supplier_id": 62,
+        "product_category_id": 6
+    },
+    {
+        "name": "Practical Plastic Bacon",
+        "description": "Automotive Intelligent Wooden Towels",
+        "created_at": "2019-07-23 00:00:00",
+        "supplier_id": 10,
+        "product_category_id": 10
+    },
+    {
+        "name": "Licensed Frozen Chips",
+        "description": "Shoes Sleek Wooden Gloves",
+        "created_at": "2020-11-19 00:00:00",
+        "supplier_id": 63,
+        "product_category_id": 1
+    },
+    {
+        "name": "Incredible Frozen Sausages",
+        "description": "Toys Gorgeous Metal Towels",
+        "created_at": "2019-08-03 00:00:00",
+        "supplier_id": 5,
+        "product_category_id": 9
+    },
+    {
+        "name": "Ergonomic Metal Towels",
+        "description": "Home Sleek Fresh Car",
+        "created_at": "2021-07-24 00:00:00",
+        "supplier_id": 16,
+        "product_category_id": 7
+    },
+    {
+        "name": "Incredible Plastic Hat",
+        "description": "Toys Handcrafted Concrete Chicken",
+        "created_at": "2019-04-18 00:00:00",
+        "supplier_id": 40,
+        "product_category_id": 7
+    },
+    {
+        "name": "Ergonomic Rubber Sausages",
+        "description": "Movies Unbranded Concrete Shirt",
+        "created_at": "2021-10-07 00:00:00",
+        "supplier_id": 62,
+        "product_category_id": 1
+    },
+    {
+        "name": "Incredible Metal Mouse",
+        "description": "Clothing Tasty Cotton Pants",
+        "created_at": "2019-10-19 00:00:00",
+        "supplier_id": 44,
+        "product_category_id": 7
+    },
+    {
+        "name": "Tasty Steel Sausages",
+        "description": "Shoes Intelligent Concrete Shoes",
+        "created_at": "2021-02-04 00:00:00",
+        "supplier_id": 18,
+        "product_category_id": 3
+    },
+    {
+        "name": "Sleek Frozen Fish",
+        "description": "Beauty Handcrafted Plastic Pizza",
+        "created_at": "2020-05-10 00:00:00",
+        "supplier_id": 23,
+        "product_category_id": 2
+    },
+    {
+        "name": "Gorgeous Rubber Cheese",
+        "description": "Games Small Metal Hat",
+        "created_at": "2021-12-30 00:00:00",
+        "supplier_id": 40,
+        "product_category_id": 9
+    },
+    {
+        "name": "Unbranded Soft Chicken",
+        "description": "Toys Generic Metal Salad",
+        "created_at": "2020-03-06 00:00:00",
+        "supplier_id": 56,
+        "product_category_id": 7
+    },
+    {
+        "name": "Tasty Frozen Towels",
+        "description": "Jewelery Unbranded Fresh Computer",
+        "created_at": "2020-02-12 00:00:00",
+        "supplier_id": 12,
+        "product_category_id": 5
+    },
+    {
+        "name": "Tasty Frozen Hat",
+        "description": "Shoes Generic Granite Hat",
+        "created_at": "2019-02-12 00:00:00",
+        "supplier_id": 66,
+        "product_category_id": 6
+    },
+    {
+        "name": "Small Rubber Tuna",
+        "description": "Grocery Licensed Wooden Sausages",
+        "created_at": "2019-12-23 00:00:00",
+        "supplier_id": 63,
+        "product_category_id": 10
+    },
+    {
+        "name": "Refined Soft Mouse",
+        "description": "Outdoors Handcrafted Granite Bike",
+        "created_at": "2019-11-25 00:00:00",
+        "supplier_id": 100,
+        "product_category_id": 2
+    },
+    {
+        "name": "Refined Steel Table",
+        "description": "Jewelery Rustic Cotton Salad",
+        "created_at": "2020-06-24 00:00:00",
+        "supplier_id": 26,
+        "product_category_id": 9
+    }
+]

@@ -1,0 +1,61 @@
+type User @model(queries: null, mutations: null, subscriptions: null)
+    @auth(rules: [
+        { allow: groups, groups: ["Admins"] },
+        { allow: owner, ownerField: "sub" },
+        { allow: private, provider: iam, operations: [create, update] }
+    ]) {
+    id: ID!
+    enabled: Boolean!
+    status: String!
+    email: String!
+    name: String!
+    email_verified: String
+    phone_number: String
+    phone_number_verified: String
+}
+
+type UserConnection {
+    items: [User!]
+}
+
+type CubejsDashboardItem @model(subscriptions: null)
+    @key(name: "userID", fields: ["userID"], queryField: "listUserDashboardItems")
+    @auth(rules: [
+        { allow: owner, ownerField: "userID", operations: [read, create, update] },
+    ]) {
+    id: ID!
+    userID: ID!
+    layout: String
+    vizState: String
+    name: String
+}
+
+enum UserType {
+    ADMIN
+    USER
+}
+
+# Custom stuff for users and things
+
+input CreateUserInput {
+    email: String!
+    name: String!
+    type: UserType!
+}
+
+input UpdateUserInput {
+    id: ID!
+    email: String
+    name: String
+    number: String
+}
+
+type Query {
+  listUsers: UserConnection @function(name: "demo-lambda-resolver")
+  getUser(id: ID!): User @function(name: "demo-lambda-resolver")
+}
+
+type Mutation {
+  createUser(input: CreateUserInput!): User @function(name: "demo-lambda-resolver")
+  updateUser(input: UpdateUserInput!): User @function(name: "demo-lambda-resolver")
+}
