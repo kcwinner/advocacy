@@ -1,6 +1,6 @@
 import { Auth, API, graphqlOperation } from 'aws-amplify';
 import { GraphQLResult } from '@aws-amplify/api/lib/types';
-import { useMutation, useQuery, QueryResult } from "react-query";
+import { useMutation, useQuery, UseQueryOptions } from "react-query";
 import * as types from '../types';
 
 import * as queries from '../graphql/queries';
@@ -9,7 +9,9 @@ import * as mutations from '../graphql/mutations';
 // DASHBOARD ITEMS
 
 export async function getUserDashboardItems(_: any, queryArgs: types.QueryListUserDashboardItemsArgs): Promise<Array<types.Maybe<types.CubejsDashboardItem>>> {
-    if (!queryArgs || !queryArgs.userID) {
+    if (!queryArgs || !queryArgs.userID) queryArgs = {};
+
+    if (!queryArgs.userID) {
         const user = await Auth.currentUserInfo();
         queryArgs.userID = user.attributes.sub
     }
@@ -18,15 +20,34 @@ export async function getUserDashboardItems(_: any, queryArgs: types.QueryListUs
     return result.data?.listUserDashboardItems?.items || [];
 }
 
-export function GetDashboardItem(queryArgs?: types.QueryGetCubejsDashboardItemArgs): QueryResult<types.CubejsDashboardItem, Error> {
+export function GetDashboardItem(variables?: types.QueryGetCubejsDashboardItemArgs, options?: UseQueryOptions) {
     return useQuery(
-        ["cubejsDashboardItem", queryArgs],
-        async (_, queryArgs) => {
-            const result = await genericQuery(queries.getCubejsDashboardItem, queryArgs);
+        ["cubejsDashboardItem", variables],
+        async (variables) => {
+            console.log('INNER VARIABLES:', variables);
+            const result = await genericQuery(queries.getCubejsDashboardItem, variables);
             return result.data?.getCubejsDashboardItem as types.CubejsDashboardItem;
-        }
+        },
+        options
     );
 }
+
+export const useGetDashboardItem = <
+  TData = types.CubejsDashboardItem,
+  TError = unknown
+>(
+  variables?: types.QueryGetCubejsDashboardItemArgs,
+  options?: UseQueryOptions<types.CubejsDashboardItem, TError, TData>
+) =>
+  useQuery<types.CubejsDashboardItem, TError, TData>(
+    ["ListCustomers", variables],
+    async () => {
+        console.log('INNER VARIABLES:', variables);
+        const result = await genericQuery(queries.getCubejsDashboardItem, variables);
+        return result.data?.getCubejsDashboardItem as types.CubejsDashboardItem;
+    },
+    options
+  );
 
 export function CreateDashboardItem() {
     return useMutation(async (input: types.CreateCubejsDashboardItemInput) => {

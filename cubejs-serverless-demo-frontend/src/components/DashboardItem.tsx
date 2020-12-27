@@ -10,7 +10,7 @@ interface DashboardItemDropdownProps {
 }
 
 function DashboardItemDropdown(props: DashboardItemDropdownProps) {
-  const [deleteDashboardItem] = API.DeleteDashboardItem();
+  const { mutate } = API.DeleteDashboardItem();
 
   const dashboardItemDropdownMenu = <Menu>
     <Menu.Item>
@@ -23,7 +23,7 @@ function DashboardItemDropdown(props: DashboardItemDropdownProps) {
       cancelText: 'No',
 
       onOk() {
-        deleteDashboardItem({ id: props.itemId });
+        mutate({ id: props.itemId });
       }
 
     })}>

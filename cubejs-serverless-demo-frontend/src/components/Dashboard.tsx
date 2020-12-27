@@ -8,7 +8,7 @@ import * as API from '../lib/api';
 const ReactGridLayout = WidthProvider(RGL);
 
 export function Dashboard(props: DashboardProps) {
-  const [updateDashboardItem] = API.UpdateDashboardItem();
+  const { mutate } = API.UpdateDashboardItem();
 
   const onLayoutChange = (newLayout: any) => {
     newLayout.forEach((l: any) => {
@@ -21,7 +21,7 @@ export function Dashboard(props: DashboardProps) {
       });
 
       if (item && toUpdate !== item.layout) {
-        updateDashboardItem({ id: item.id, layout: toUpdate });
+        mutate({ id: item.id, layout: toUpdate });
       }
     });
   }

@@ -4,8 +4,8 @@ import { Modal, Input } from 'antd';
 import * as API from '../lib/api';
 
 export function TitleModal(props: TitleModalProps) {
-  const [createDashboardItem] = API.CreateDashboardItem();
-  const [updateDashboardItem] = API.UpdateDashboardItem();
+  const createDashboardItem = API.CreateDashboardItem();
+  const updateDashboardItem = API.UpdateDashboardItem();
 
   const onOk = async () => {
     props.setTitleModalVisible(false);
@@ -14,7 +14,7 @@ export function TitleModal(props: TitleModalProps) {
     const user = await Auth.currentUserInfo();
 
     try {
-      await (props.itemId ? updateDashboardItem : createDashboardItem)({
+      await (props.itemId ? updateDashboardItem.mutateAsync : createDashboardItem.mutateAsync)({
         id: props.itemId,
         userID: user.attributes.sub,
         vizState: JSON.stringify(props.finalVizState),

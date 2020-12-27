@@ -16,7 +16,15 @@ const ExplorePage = withRouter(({ history, location }) => {
   const [addingToDashboard, setAddingToDashboard] = useState(false);
   const params = new URLSearchParams(location.search);
   const itemId = params.get('itemId');
-  const { data, error, isFetching } = API.GetDashboardItem({ id: itemId || '' });
+
+  const queryArgs = { id: itemId };
+  // const { data, error, isFetching }: any = API.GetDashboardItem(queryArgs, {
+  //   enabled: itemId !== undefined && itemId !== ''
+  // });
+
+  const { data, error, isFetching }: any = API.useGetDashboardItem(queryArgs, {
+    enabled: itemId !== null && itemId !== ''
+  });
 
   const [vizState, setVizState] = useState(null);
   const finalVizState = vizState || itemId && !isFetching && data && JSON.parse(data.vizState || '') || {};
@@ -34,7 +42,16 @@ const ExplorePage = withRouter(({ history, location }) => {
 
   return (
     <div>
-      <TitleModal history={history} itemId={itemId} titleModalVisible={titleModalVisible} setTitleModalVisible={setTitleModalVisible} setAddingToDashboard={setAddingToDashboard} finalVizState={finalVizState} setTitle={setTitle} finalTitle={finalTitle} />
+      <TitleModal history={history} 
+        itemId={itemId} 
+        titleModalVisible={titleModalVisible} 
+        setTitleModalVisible={setTitleModalVisible} 
+        setAddingToDashboard={setAddingToDashboard} 
+        finalVizState={finalVizState} 
+        setTitle={setTitle} 
+        finalTitle={finalTitle} 
+      />
+
       <ExploreQueryBuilder vizState={finalVizState}
         setVizState={setVizState}
         cubejsApi={cubejsApi}
