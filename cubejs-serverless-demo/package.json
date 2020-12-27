@@ -6,14 +6,14 @@
     "start": "npx projen start -i",
     "projen": "node .projenrc.js",
     "no-changes": "(git log --oneline -1 | grep -q \"chore(release):\") && echo \"No changes to release.\"",
-    "bump": "yarn run --silent no-changes || standard-version",
-    "release": "yarn run --silent no-changes || (yarn run bump && git push --follow-tags origin master)",
-    "test": "rm -fr lib/ && jest --passWithNoTests && yarn run eslint",
+    "bump": "npm run --silent no-changes || standard-version",
+    "release": "npm run --silent no-changes || (npm run bump && git push --follow-tags origin master)",
+    "test": "rm -fr lib/ && jest --passWithNoTests && npm run eslint",
     "test:watch": "jest --watch",
     "test:update": "jest --updateSnapshot",
     "projen:upgrade": "yarn upgrade -L projen && CI=\"\" yarn projen",
     "compile": "true",
-    "build": "yarn run test && yarn run compile && yarn run synth",
+    "build": "npm run test && npm run compile && npm run synth",
     "eslint": "eslint --ext .ts,.tsx --fix --no-error-on-unmatched-pattern src test",
     "cdk": "cdk",
     "synth": "cdk synth",
@@ -37,9 +37,10 @@
     "@types/node": "^10.17.0",
     "@typescript-eslint/eslint-plugin": "^4.3.0",
     "@typescript-eslint/parser": "^4.3.0",
-    "aws-cdk": "1.70.0",
+    "aws-cdk": "1.80.0",
     "aws-sdk": "^2.799.0",
     "data-api-client": "^1.1.0",
+    "esbuild": "^0.8.26",
     "eslint": "^7.14.0",
     "eslint-import-resolver-node": "^0.3.4",
     "eslint-import-resolver-typescript": "^2.3.0",
@@ -49,7 +50,6 @@
     "json-schema": "^0.2.5",
     "jsonwebtoken": "^8.5.1",
     "knex": "^0.21.12",
-    "parcel": "2.0.0-beta.1",
     "projen": "^0.5.5",
     "standard-version": "^9.0.0",
     "ts-jest": "^26.4.4",
@@ -58,92 +58,93 @@
   },
   "peerDependencies": {},
   "dependencies": {
-    "@aws-cdk/assert": "1.70.0",
-    "@aws-cdk/aws-apigatewayv2": "1.70.0",
-    "@aws-cdk/aws-appsync": "1.70.0",
-    "@aws-cdk/aws-cognito": "1.70.0",
-    "@aws-cdk/aws-dynamodb": "1.70.0",
-    "@aws-cdk/aws-ec2": "1.70.0",
-    "@aws-cdk/aws-iam": "1.70.0",
-    "@aws-cdk/aws-lambda": "1.70.0",
-    "@aws-cdk/aws-lambda-event-sources": "1.70.0",
-    "@aws-cdk/aws-lambda-nodejs": "1.70.0",
-    "@aws-cdk/aws-rds": "1.70.0",
-    "@aws-cdk/aws-sns": "1.70.0",
-    "@aws-cdk/core": "1.70.0",
-    "cdk-appsync-transformer": "1.70.1"
+    "@aws-cdk/assert": "1.80.0",
+    "@aws-cdk/aws-apigatewayv2": "1.80.0",
+    "@aws-cdk/aws-apigatewayv2-integrations": "1.80.0",
+    "@aws-cdk/aws-appsync": "1.80.0",
+    "@aws-cdk/aws-cognito": "1.80.0",
+    "@aws-cdk/aws-dynamodb": "1.80.0",
+    "@aws-cdk/aws-ec2": "1.80.0",
+    "@aws-cdk/aws-iam": "1.80.0",
+    "@aws-cdk/aws-lambda": "1.80.0",
+    "@aws-cdk/aws-lambda-event-sources": "1.80.0",
+    "@aws-cdk/aws-lambda-nodejs": "1.80.0",
+    "@aws-cdk/aws-rds": "1.80.0",
+    "@aws-cdk/aws-sns": "1.80.0",
+    "@aws-cdk/core": "1.80.0",
+    "cdk-appsync-transformer": "^1.77.0"
   },
   "bundledDependencies": [],
   "keywords": [],
   "license": "Apache-2.0",
   "start": {
     "start": {
-      "command": "yarn run start",
+      "command": "npm run start",
       "desc": "Shows this menu"
     },
     "projen": {
       "desc": "Synthesize project configuration from .projenrc.js",
-      "command": "yarn run projen",
+      "command": "npm run projen",
       "category": 3
     },
     "bump": {
       "desc": "Commits a bump to the package version based on conventional commits",
-      "command": "yarn run bump",
+      "command": "npm run bump",
       "category": 2
     },
     "release": {
       "desc": "Bumps version & push to master",
-      "command": "yarn run release",
+      "command": "npm run release",
       "category": 2
     },
     "test": {
       "desc": "Run tests",
-      "command": "yarn run test",
+      "command": "npm run test",
       "category": 1
     },
     "test:watch": {
       "desc": "Run jest in watch mode",
-      "command": "yarn run test:watch",
+      "command": "npm run test:watch",
       "category": 1
     },
     "projen:upgrade": {
       "desc": "upgrades projen to the latest version",
-      "command": "yarn run projen:upgrade",
+      "command": "npm run projen:upgrade",
       "category": 3
     },
     "compile": {
       "desc": "Only compile",
-      "command": "yarn run compile",
+      "command": "npm run compile",
       "category": 0
     },
     "watch": {
       "desc": "Watch & compile in the background",
-      "command": "yarn run watch",
+      "command": "npm run watch",
       "category": 0
     },
     "build": {
       "desc": "Full release build (test+compile)",
-      "command": "yarn run build",
+      "command": "npm run build",
       "category": 0
     },
     "eslint": {
       "desc": "Runs eslint against the codebase",
-      "command": "yarn run eslint",
+      "command": "npm run eslint",
       "category": 1
     },
     "synth": {
       "desc": "Synthesizes your cdk app into cdk.out (part of \"yarn build\")",
-      "command": "yarn run synth",
+      "command": "npm run synth",
       "category": 0
     },
     "deploy": {
       "desc": "Deploys your cdk app to the AWS cloud",
-      "command": "yarn run deploy",
+      "command": "npm run deploy",
       "category": 2
     },
     "destroy": {
       "desc": "Destroys your cdk app in the AWS cloud",
-      "command": "yarn run destroy",
+      "command": "npm run destroy",
       "category": 2
     }
   },

@@ -1,19 +1,19 @@
 import * as path from 'path';
-import { HttpApi, LambdaProxyIntegration, PayloadFormatVersion } from '@aws-cdk/aws-apigatewayv2';
-import { AuthorizationType, UserPoolDefaultAction, LambdaDataSource, GraphqlApi } from '@aws-cdk/aws-appsync';
+import { HttpApi, PayloadFormatVersion } from '@aws-cdk/aws-apigatewayv2';
+import { LambdaProxyIntegration } from '@aws-cdk/aws-apigatewayv2-integrations';
+import { AuthorizationType, UserPoolDefaultAction } from '@aws-cdk/aws-appsync';
 import { UserPool, UserPoolClient, CfnUserPoolGroup } from '@aws-cdk/aws-cognito';
 import { AttributeType, BillingMode, Table } from '@aws-cdk/aws-dynamodb';
 import { Vpc, SubnetType } from '@aws-cdk/aws-ec2';
 import { PolicyStatement, Effect, Role, ServicePrincipal, PolicyDocument } from '@aws-cdk/aws-iam';
 import { Code, Function, Runtime } from '@aws-cdk/aws-lambda';
-import { Topic } from '@aws-cdk/aws-sns';
 import { SnsEventSource } from '@aws-cdk/aws-lambda-event-sources';
 import { ServerlessCluster, DatabaseSecret, DatabaseClusterEngine, AuroraMysqlEngineVersion } from '@aws-cdk/aws-rds';
+import { Topic } from '@aws-cdk/aws-sns';
 import { CfnOutput, Construct, Stack, StackProps, Duration } from '@aws-cdk/core';
 
 import { AppSyncTransformer } from 'cdk-appsync-transformer';
 import { AppSyncLambdaFunction } from './constructs/appsync-lambda-function';
-import { AppSyncLambdaResolver } from './constructs/appsync-lambda-resolver';
 
 export interface CubeJsStackProps extends StackProps { }
 
@@ -62,13 +62,13 @@ export class CubeJsStack extends Stack {
         password: databaseSecret.secretValueFromJson('password'),
         secret: databaseSecret,
       },
-      enableHttpEndpoint: true,
+      enableDataApi: true,
       backupRetention: Duration.days(1),
       scaling: {
         maxCapacity: 1,
         minCapacity: 1,
-        autoPause: Duration.minutes(15)
-      }
+        autoPause: Duration.minutes(15),
+      },
     });
 
     // Cognito Setup
@@ -110,34 +110,34 @@ export class CubeJsStack extends Stack {
 
     const processTopic = new Topic(this, 'demo-sns-process-topic', {
       displayName: 'demo-cubejs-process',
-      topicName: 'demo-cubejs-process'
-    })
+      topicName: 'demo-cubejs-process',
+    });
 
     const cubejsCacheTable = new Table(this, 'demo-cache-table', {
       partitionKey: {
         name: 'pk',
-        type: AttributeType.STRING
+        type: AttributeType.STRING,
       },
       sortKey: {
         name: 'sk',
-        type: AttributeType.STRING
+        type: AttributeType.STRING,
       },
-      
+
       timeToLiveAttribute: 'exp',
-      billingMode: BillingMode.PAY_PER_REQUEST
-    })
+      billingMode: BillingMode.PAY_PER_REQUEST,
+    });
 
     cubejsCacheTable.addGlobalSecondaryIndex({
       indexName: 'GSI1',
       partitionKey: {
         name: 'pk',
-        type: AttributeType.STRING
+        type: AttributeType.STRING,
       },
       sortKey: {
         name: 'GSI1sk',
-        type: AttributeType.NUMBER
-      }
-    })
+        type: AttributeType.NUMBER,
+      },
+    });
 
     const demoFunctionRole = new Role(this, 'demo-function-role', {
       assumedBy: new ServicePrincipal('lambda.amazonaws.com'),
@@ -211,7 +211,7 @@ export class CubeJsStack extends Stack {
       NODE_ENV: 'production',
       PROCESS_TOPIC_ARN: processTopic.topicArn, // Used by the handler to send the process message
 
-      STAGE
+      STAGE,
     };
 
     const appRoot = process.env.PWD || './';
@@ -226,20 +226,20 @@ export class CubeJsStack extends Stack {
       handler: 'index.api',
       role: demoFunctionRole,
       environment: lambdaEnvironment,
-      timeout: Duration.minutes(1)
+      timeout: Duration.minutes(1),
     });
 
     // Set payload format version to VERSION_1_0 so it works with aws-serverless-express
     // HTTP API is faster and cheaper so it's worth it
     const proxyIntegration = new LambdaProxyIntegration({
       handler: demoCubeFunction,
-      payloadFormatVersion: PayloadFormatVersion.VERSION_1_0
-    })
+      payloadFormatVersion: PayloadFormatVersion.VERSION_1_0,
+    });
 
     const cubejsApi = new HttpApi(this, 'demo-cubejs-http-api', {
       description: 'cubejs http proxy api',
-      defaultIntegration: proxyIntegration
-    })
+      defaultIntegration: proxyIntegration,
+    });
 
     const demoProcessFunction = new Function(this, 'demo-serverless-cubejs-process-function', {
       functionName: 'demo-cubejs-process-function',
@@ -249,7 +249,7 @@ export class CubeJsStack extends Stack {
       handler: 'index.process',
       role: demoFunctionRole,
       environment: lambdaEnvironment,
-      timeout: Duration.minutes(1)
+      timeout: Duration.minutes(1),
     });
 
     demoProcessFunction.addEventSource(new SnsEventSource(processTopic));
@@ -277,73 +277,41 @@ export class CubeJsStack extends Stack {
       description: 'Demo Resolver Function',
     });
 
-    // Lambda Data Source
-    const resolverServiceRole = new Role(this.appsyncTransformer.nestedAppsyncStack, `${id}-service-role`, {
-      assumedBy: new ServicePrincipal('appsync.amazonaws.com'),
-      inlinePolicies: {
-        'inline-lambda-policy': new PolicyDocument({
-          statements: [
-            new PolicyStatement({
-              effect: Effect.ALLOW,
-              actions: ['lambda:*'],
-              resources: ['*'],
-            }),
-          ],
-        }),
-      },
-    });
-
-    const demoResolverDataSource = new LambdaDataSource(this.appsyncTransformer.nestedAppsyncStack, `demo-resolver-data-source-${STAGE}`, {
-      api: this.appsyncTransformer.appsyncAPI,
-      lambdaFunction: demoResolverFunction.function,
-      name: 'DemoResolverDataSource',
-      serviceRole: resolverServiceRole,
-    });
-
-    const lambdaData = this.appsyncTransformer.outputs.FUNCTION_RESOLVERS;
-    if (lambdaData) {
-      this.createLambdaResolvers(STAGE, this.appsyncTransformer.appsyncAPI, lambdaData, demoResolverDataSource);
-    }
+    this.appsyncTransformer.addLambdaDataSourceAndResolvers(
+      'demo-lambda-resolver',
+      'demo-lambda-resolver-data-source',
+      demoResolverFunction.function,
+      {
+        name: 'lamdaresolversrc'
+      }
+    );
 
     // Outputs so we can generate exports
     new CfnOutput(this, 'cubejsApiUrlOutput', {
       value: `https://${cubejsApi.httpApiId}.execute-api.${this.region}.amazonaws.com`,
-      description: 'userPoolId value for amplify'
-    })
+      description: 'userPoolId value for amplify',
+    });
 
     new CfnOutput(this, 'userPoolIdOutput', {
       value: this.userPool.userPoolId,
-      description: 'userPoolId value for amplify'
-    })
+      description: 'userPoolId value for amplify',
+    });
 
     new CfnOutput(this, 'userPoolWebClientIdOutput', {
       value: userpoolWebClient.userPoolClientId,
-      description: 'userPoolWebClientId value for amplify'
-    })
+      description: 'userPoolWebClientId value for amplify',
+    });
 
     // Outputting for use with knex
     new CfnOutput(this, 'dbSecretArn', {
       value: databaseSecret.secretArn,
-      description: 'secretArn for use with knex'
-    })
+      description: 'secretArn for use with knex',
+    });
 
     // Outputting for use with knex
     new CfnOutput(this, 'clusterArn', {
       value: cluster.clusterArn,
-      description: 'clusterArn for use with knex'
-    })
-
-    
-  }
-
-  private createLambdaResolvers(stage: string, api: GraphqlApi, lambdaResolver: any, dataSource: LambdaDataSource) {
-    lambdaResolver.forEach((resolver: any) => {
-      new AppSyncLambdaResolver(this.appsyncTransformer.nestedAppsyncStack, `demo-${resolver.fieldName}-resolver-${stage}`, {
-        api: api,
-        typeName: resolver.typeName,
-        fieldName: resolver.fieldName,
-        dataSource: dataSource,
-      });
+      description: 'clusterArn for use with knex',
     });
   }
 

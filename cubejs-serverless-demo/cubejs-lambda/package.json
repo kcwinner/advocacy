@@ -11,11 +11,14 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@cubejs-backend/api-gateway": "^0.24.0",
-    "@cubejs-backend/mysql-aurora-serverless-driver": "^0.24.2",
-    "@cubejs-backend/query-orchestrator": "file:../../../../cube-js/cube.js/packages/cubejs-query-orchestrator/cubejs-backend-query-orchestrator-0.24.3.tgz",
-    "@cubejs-backend/server": "^0.24.2",
-    "@cubejs-backend/serverless": "^0.24.2",
+    "@cubejs-backend/api-gateway": "^0.25.1",
+    "@cubejs-backend/mysql-aurora-serverless-driver": "^0.25.1",
+    "@cubejs-backend/query-orchestrator": "/Users/ken/github/cube-js/cube.js/packages/cubejs-query-orchestrator/cubejs-backend-query-orchestrator-0.25.1.tgz",
+    "@cubejs-backend/server": "^0.25.1",
+    "@cubejs-backend/serverless": "^0.25.1",
     "serverless-express": "^2.0.11"
+  },
+  "resolutions": {
+    "@cubejs-backend/query-orchestrator": "/Users/ken/github/cube-js/cube.js/packages/cubejs-query-orchestrator/cubejs-backend-query-orchestrator-0.25.1.tgz"
   }
 }

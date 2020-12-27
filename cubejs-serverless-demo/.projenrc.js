@@ -1,15 +1,17 @@
-const { AwsCdkTypeScriptApp } = require('projen');
+const { AwsCdkTypeScriptApp, NodePackageManager } = require('projen');
 
 const project = new AwsCdkTypeScriptApp({
   authorEmail: 'kcswinner@gmail.com',
   authorName: 'Ken Winner',
   name: "cubejs-demo",
+  packageManager: NodePackageManager.NPM,
 
   typescriptVersion: '^4.1.2',
-  cdkVersion: "1.70.0",
+  cdkVersion: "1.80.0",
   cdkVersionPinning: true,
   cdkDependencies: [
     '@aws-cdk/aws-apigatewayv2',
+    '@aws-cdk/aws-apigatewayv2-integrations',
     '@aws-cdk/aws-appsync',
     '@aws-cdk/aws-cognito',
     '@aws-cdk/aws-dynamodb',
@@ -22,14 +24,14 @@ const project = new AwsCdkTypeScriptApp({
     '@aws-cdk/aws-sns'
   ],
   deps: [
-    'cdk-appsync-transformer@1.70.1'
+    'cdk-appsync-transformer@^1.77.0'
   ],
   devDeps: [
     'aws-sdk',
     'data-api-client',
     'jsonwebtoken',
     'knex',
-    'parcel@2.0.0-beta.1',
+    'esbuild',
   ],
 
   gitignore: [
