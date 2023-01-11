@@ -49,7 +49,7 @@
     "jest-junit": "^12",
     "json-schema": "^0.2.5",
     "jsonwebtoken": "^8.5.1",
-    "knex": "^0.21.12",
+    "knex": "^2.4.0",
     "projen": "^0.5.5",
     "standard-version": "^9.0.0",
     "ts-jest": "^26.4.4",
